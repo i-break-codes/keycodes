@@ -39,8 +39,11 @@ var KeyCode = {
     //Show Key
     document.getElementById('showKey').innerHTML = keyCode;
     
-    var test = document.getElementById('codeModal');
-    test.getElementsByTagName('span')[0].innerHTML = keyCode;
+    //Change keycode in syntax
+    var getHolders = KeyCode.elms.codeModal.getElementsByTagName('span');
+    for(i = 0; i < getHolders.length; i++) {
+      getHolders[i].innerHTML = keyCode;
+    }
   },
   
   showModal: function() {
