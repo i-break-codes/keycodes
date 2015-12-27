@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to left, #525252 , #3d72b4);
+  background-size: auto 100%;
+  font: normal 300 13px/16px Lato;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}

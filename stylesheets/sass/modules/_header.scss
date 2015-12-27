@@ -1,0 +1,50 @@
+header {
+  padding: 40px;
+  
+  a {
+    border: 1px solid $base-color;
+    color: $base-color;
+    padding: 8px 20px;
+    border-radius: 3px;
+    position: relative;
+    
+    &:hover,
+    &.active-main-nav {
+      background-color: transparentize($base-color, 0.4);
+      color: opacify($base-color, 1);
+    }
+  }
+  
+  .github a {
+    padding-left: 40px;
+    
+    &:before {
+      content: "";
+      display: inline-block;
+      background-image: url('../images/github.svg');
+      height: 16px;
+      width: 16px;
+      background-size: 100% auto;
+      margin-right: 7px;
+      position: absolute;
+      left: 18px;
+      top: 8px;
+      opacity: .5;
+    }
+    
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  
+  ul {
+    float: right;  
+  }
+  
+  li {
+    float: left;
+    margin-left: 30px;
+  }
+}

@@ -1,0 +1,4 @@
+.fade-out-title {
+  transition: .5s color linear;
+  color: transparentize($base-color, 0.4);
+}

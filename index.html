@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Key Codes</title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <header class="clear">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#" id="getCode">Code</a></li>
+            <li class="github"><a href="https://github.com/i-break-codes/keycodes" target="_blank">GitHub</a></li>
+          </ul>
+        </nav>
+      </header>
+      <h1>Press Any Key</h1>
+      <div id="showKey" class="show-key"></div>
+    </div>
+    
+    <div id="codeModal" class="hide">
+      <nav class="code-nav">
+        <ul class="clear">
+          <li class="active-code-nav"><a href="#" data-trigger="javascript">JavaScript</a></li>
+          <li><a href="#" data-trigger="jquery">jQuery</a></li>
+        </ul>
+      </nav>
+        
+      <div data-target="javascript">
+<pre id="javascriptCode">
+  document.addEventListener('keydown', function(e) {
+    if(e.keyCode === <span>&lt;KEY_CODE&gt;</span>) {
+      e.preventDefault();
+      console.log('You just pressed a key');  
+    }
+  });
+</pre>
+      </div>
+      <div data-target="jquery" class="hide">
+<pre id="jqueryCode">
+  jQuery(document).on('keydown', function(e) {
+    if(e.keyCode === <span>&lt;KEY_CODE&gt;</span>) {
+      e.preventDefault();
+      console.log('You just pressed a key');  
+    }
+  });
+</pre>
+      </div>
+      <div class="modal-controls">
+        <p class="hide">Copied</p>
+        <ul>
+          <li><a href="#" data-clipboard-target="javascriptCode" id="copyButton">Copy</a></li>
+          <li><a href="#" id="closeModal">Close</a></li>
+        </ul>
+      </div>
+    </div>
+    <script src="javascript/ZeroClipboard.js"></script>
+    <script src="javascript/main.js"></script>
+  </body>
+</html>
