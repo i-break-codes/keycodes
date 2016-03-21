@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  background-image: linear-gradient(to left, #525252 , #3d72b4);
+  background-image: linear-gradient(to left, $grad-start-color , $grad-end-color);
   background-size: auto 100%;
   font: normal 300 13px/16px Lato;
 }
