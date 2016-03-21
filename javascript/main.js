@@ -4,18 +4,20 @@ var KeyCode = {
   },
   
   bindings: function() {
+    var obj = this;
+    
     //Get Key On KeyDown
-    this.getKey();
+    obj.getKey();
     
     //Trigger/Hide Code Modal onClick
-    this.showModal();
-    this.hideModal();
+    obj.showModal();
+    obj.hideModal();
     
     //Switch modal language
-    this.switchLanguage();
+    obj.switchLanguage();
     
     //Copy Syntax
-    this.copySyntax();
+    obj.copySyntax();
   },
   
   elms: {
@@ -34,8 +36,7 @@ var KeyCode = {
   showKey: function(keyCode) {
     //Fade out the title
     document.getElementsByTagName('h1')[0].classList.add('fade-out-title');
-
-
+    
     //Show Key
     document.getElementById('showKey').innerHTML = keyCode;
     
@@ -52,8 +53,7 @@ var KeyCode = {
       e.preventDefault();
       elm.className = 'active-main-nav';
       
-      KeyCode.elms.wrapper.classList.remove('show');
-      KeyCode.elms.wrapper.classList.add('hide');
+      KeyCode.toggleClass(KeyCode.elms.wrapper, 'hide', 'show');
       KeyCode.elms.codeModal.className = 'show';
     });
   },
@@ -66,8 +66,7 @@ var KeyCode = {
       var c = KeyCode.elms;
       c.codeModal.className = 'hide';
       c.getCodeBtn.removeAttribute('class');
-      c.wrapper.classList.remove('hide');
-      c.wrapper.classList.add('show');
+      KeyCode.toggleClass(c.wrapper, 'show', 'hide');
     });
   },
   
@@ -91,12 +90,10 @@ var KeyCode = {
         document.getElementById('copyButton').setAttribute('data-clipboard-target', selectedLanguage + 'Code');
         
         for(codeWindows = 0; codeWindows < getCodeWindows.length; codeWindows++) {
-          getCodeWindows[codeWindows].classList.remove('show');
-          getCodeWindows[codeWindows].classList.add('hide');
+          KeyCode.toggleClass(getCodeWindows[codeWindows], 'hide', 'show');
         }
         var activateWindow = document.querySelectorAll('[data-target=' + selectedLanguage + ']')[0];
-        activateWindow.classList.remove('hide');
-        activateWindow.classList.add('show');
+        KeyCode.toggleClass(activateWindow, 'show', 'hide');
       });
     }
   },
@@ -116,6 +113,11 @@ var KeyCode = {
         }, 1000);
       });
     });
+  },
+  
+  toggleClass: function(elm, addClass, removeClass) {
+    elm.classList.remove(removeClass);
+    elm.classList.add(addClass);
   }
 }
 
