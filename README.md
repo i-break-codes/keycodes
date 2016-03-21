@@ -1,5 +1,5 @@
 # JavaScript Keycodes
-Helps you find key codes with ease along with ready JavaScript and jQuery copyable code snippets.
+Helps you find key codes with ease by clicking any of the key on your keyboard along with ready JavaScript and jQuery copyable code snippets.
 
 # Installation
 Go to your project dir and run the following snippet in the command line.
@@ -16,7 +16,7 @@ $ gulp
 
 ### Features
 - Get any key code
-- Copy vanilla JavaScript of jQuery snippet
+- Copy vanilla JavaScript or jQuery snippet
 - List of keycodes (Yet to add)
 
 ### Online Demo
@@ -27,4 +27,4 @@ $ gulp
 - Questions? DM or Tweet me [@insanecoding](https://twitter.com/insanecoding)
 
 ##### License
-Do whatever you want to do with this, but will be glad if you can share the repo link as a credit note. ^^)
+Do whatever you want to do with this, will be glad if you can share the repo link as a credit note. ^^)
