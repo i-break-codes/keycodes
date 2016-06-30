@@ -24,7 +24,7 @@ $ gulp
 
 ### Support
 - Bugs and requests, submit them through the project's [issues](https://github.com/i-break-codes/keycodes/issues) section
-- Questions? DM or Tweet me [@insanecoding](https://twitter.com/insanecoding)
+- Questions? DM or Tweet me [@mr_ali3n](https://twitter.com/mr_ali3n)
 
 ##### License
 Do whatever you want to do with this, will be glad if you can share the repo link as a credit note. ^^)
