@@ -51,10 +51,9 @@ var KeyCode = function() {
     elm.addEventListener('click', function(e) {
       e.preventDefault();
       
-      var c = KeyCode.elms;
-      c.codeModal.className = 'hide';
-      c.getCodeBtn.removeAttribute('class');
-      toggleClass(c.wrapper, 'show', 'hide');
+      codeModal.className = 'hide';
+      getCodeBtn.removeAttribute('class');
+      toggleClass(wrapper, 'show', 'hide');
     });
   }
   
