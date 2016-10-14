@@ -1,0 +1,31 @@
+{
+  "name": "keycodes",
+  "version": "1.0.0",
+  "description": "JavaScript Keycodes",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.2.0",
+    "sass": "^0.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-break-codes/keycodes.git"
+  },
+  "keywords": [
+    "javascript",
+    "jquery",
+    "keycodes",
+    "application"
+  ],
+  "author": "Vaibhav Mehta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i-break-codes/keycodes/issues"
+  },
+  "homepage": "https://github.com/i-break-codes/keycodes#readme"
+}
