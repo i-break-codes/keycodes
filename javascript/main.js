@@ -1,64 +1,52 @@
-var KeyCode = {
-  init: function() {
-    this.bindings();
-  },
+var KeyCode = function() {
+  var wrapper = document.getElementById('wrapper');
+  var codeModal = document.getElementById('codeModal');
+  var getCodeBtn = document.getElementById('getCode');
   
-  bindings: function() {
-    var obj = this;
-    
-    //Get Key On KeyDown
-    obj.getKey();
-    
-    //Trigger/Hide Code Modal onClick
-    obj.showModal();
-    obj.hideModal();
-    
-    //Switch modal language
-    obj.switchLanguage();
-    
-    //Copy Syntax
-    obj.copySyntax();
-  },
+  function init() {
+    bindings();
+  }
   
-  elms: {
-    wrapper: document.getElementById('wrapper'),
-    codeModal: document.getElementById('codeModal'),
-    getCodeBtn: document.getElementById('getCode')
-  },
+  function bindings() {
+    getKey();
+    showModal();
+    hideModal();
+    switchLanguage();
+    copySyntax();
+  }
   
-  getKey: function() {
+  function getKey() {
     document.addEventListener('keydown', function(e) {
       e.preventDefault();
-      KeyCode.showKey(e.keyCode);
+      showKey(e.keyCode);
     });
-  },
+  }
   
-  showKey: function(keyCode) {
-    //Fade out the title
+  function showKey(keyCode) {
     document.getElementsByTagName('h1')[0].classList.add('fade-out-title');
     
     //Show Key
     document.getElementById('showKey').innerHTML = keyCode;
     
     //Change keycode in syntax
-    var getHolders = KeyCode.elms.codeModal.getElementsByTagName('span');
+    var getHolders = codeModal.getElementsByTagName('span');
     for(i = 0; i < getHolders.length; i++) {
       getHolders[i].innerHTML = keyCode;
     }
-  },
+  }
   
-  showModal: function() {
+  function showModal() {
     var elm = document.getElementById('getCode');
     elm.addEventListener('click', function(e) {
       e.preventDefault();
       elm.className = 'active-main-nav';
       
-      KeyCode.toggleClass(KeyCode.elms.wrapper, 'hide', 'show');
-      KeyCode.elms.codeModal.className = 'show';
+      toggleClass(wrapper, 'hide', 'show');
+      codeModal.className = 'show';
     });
-  },
+  }
   
-  hideModal: function() {
+  function hideModal() {
     var elm = document.getElementById('closeModal');
     elm.addEventListener('click', function(e) {
       e.preventDefault();
@@ -66,11 +54,11 @@ var KeyCode = {
       var c = KeyCode.elms;
       c.codeModal.className = 'hide';
       c.getCodeBtn.removeAttribute('class');
-      KeyCode.toggleClass(c.wrapper, 'show', 'hide');
+      toggleClass(c.wrapper, 'show', 'hide');
     });
-  },
+  }
   
-  switchLanguage: function() {
+  function switchLanguage() {
     var getSwitches = document.querySelectorAll('[data-trigger]');
     
     for(elm = 0; elm < getSwitches.length; elm++) {
@@ -90,15 +78,15 @@ var KeyCode = {
         document.getElementById('copyButton').setAttribute('data-clipboard-target', selectedLanguage + 'Code');
         
         for(codeWindows = 0; codeWindows < getCodeWindows.length; codeWindows++) {
-          KeyCode.toggleClass(getCodeWindows[codeWindows], 'hide', 'show');
+          toggleClass(getCodeWindows[codeWindows], 'hide', 'show');
         }
         var activateWindow = document.querySelectorAll('[data-target=' + selectedLanguage + ']')[0];
-        KeyCode.toggleClass(activateWindow, 'show', 'hide');
+        toggleClass(activateWindow, 'show', 'hide');
       });
     }
-  },
+  }
   
-  copySyntax: function() {
+  function copySyntax() {
     document.getElementById("copyButton").addEventListener('click', function(e) {
       e.preventDefault();
     });
@@ -113,12 +101,16 @@ var KeyCode = {
         }, 1000);
       });
     });
-  },
+  }
   
-  toggleClass: function(elm, addClass, removeClass) {
+  function toggleClass(elm, addClass, removeClass) {
     elm.classList.remove(removeClass);
     elm.classList.add(addClass);
   }
-}
+  
+  return {
+    init: init
+  }
+}();
 
 KeyCode.init();
